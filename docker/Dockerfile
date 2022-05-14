@@ -13,7 +13,7 @@ RUN apt update -y && \
 RUN git clone https://github.com/JuliaLang/julia && \
     cd julia; \
     mkdir /julia; \
-    make BUILD_LLDB=1 VERBOSE=1 prefix=/julia BUNDLE_DEBUG_LIBS=1 install; \
+    make BUILD_LLDB=1 VERBOSE=1 BUNDLE_DEBUG_LIBS=1 prefix=/julia install; \
     make cleanall;
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 ENV PATH=$PATH:/julia/bin

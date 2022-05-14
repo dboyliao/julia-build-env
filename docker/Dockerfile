@@ -8,13 +8,15 @@ RUN apt update -y && \
     apt install -y tzdata \
     build-essential libatomic1 \
     python gfortran \
-    llvm lldb \
+    lldb \
     perl wget m4 cmake pkg-config git;
 RUN git clone https://github.com/JuliaLang/julia && \
     cd julia; \
-    make BUILD_LLDB=1 USE_SYSTEM_LLVM=0 debug install
+    mkdir /julia; \
+    make BUILD_LLDB=1 VERBOSE=1 prefix=/julia BUNDLE_DEBUG_LIBS=1 install; \
+    make cleanall;
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-ENV PATH=$PATH:/julia/usr/bin
+ENV PATH=$PATH:/julia/bin
 
 WORKDIR /root
 CMD ["/bin/bash"]

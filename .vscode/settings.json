@@ -1,6 +1,6 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
-    "julia.executablePath": "/julia/usr/bin/julia-debug",
+    "julia.executablePath": "julia-debug",
     "files.associations": {
         "*.vue": "vue",
         ".bash_functions": "shellscript",

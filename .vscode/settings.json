@@ -1,0 +1,10 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "julia.executablePath": "/julia/usr/bin/julia-debug",
+    "files.associations": {
+        "*.vue": "vue",
+        ".bash_functions": "shellscript",
+        "Makefile-docker": "makefile",
+        "builtin_proto.h": "c"
+    }
+}
